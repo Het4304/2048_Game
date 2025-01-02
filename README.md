@@ -83,7 +83,7 @@ CMD ["run app.py"]
 ## 📸 Screenshots
 
 ### Application Interface:
-![Screenshot 1](/Screenshot%202025-01-02%20at%2001.26.16%2019.11.53.png)
+![Screenshot 1](/1.png)
 
 ### Deployment Configuration:
-![Screenshot 2](/Screenshot%202025-01-02%20at%2001.26.27%2019.11.53.png)
+![Screenshot 2](/2.png)
