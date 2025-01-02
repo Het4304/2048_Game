@@ -1,1 +1,3 @@
 *.png
+.gitignore
+.DS_store
