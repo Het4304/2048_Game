@@ -86,7 +86,7 @@ CMD ["run app.py"]
 ![Screenshot 1](/1.png)
 
 ### Deployment Configuration:
-![Screenshot 2](/2.png)
+![Screenshot 2](/21.png)
 
 
 
