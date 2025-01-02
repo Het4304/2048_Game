@@ -8,36 +8,22 @@ This project demonstrates a game application containerized using Docker and host
 
 ## 🛠️ Tech Stack
 
-- **Programming Language:** [Specify Language, e.g., Python, Node.js]
-- **Framework:** [Specify Framework, e.g., Django, Express.js]
 - **Containerization:** Docker
 - **Cloud Hosting:** AWS Elastic Beanstalk
-
----
-
-## 📂 Project Structure
-
-```plaintext
-├── Dockerfile           # Docker configuration for the game application
-├── .elasticbeanstalk    # Elastic Beanstalk configuration files
-├── src/                 # Source code for the game application
-├── README.md            # Project documentation
-└── .gitignore           # Ignored files
-```
 
 ---
 
 ## 🐳 Dockerfile Details
 
 The `Dockerfile` used for this application includes:
-- **Base Image**: [e.g., Python:3.8-slim, Node:14-alpine]
+- **Base Image**: [e.g., ubuntu:22.04, Python:3.8-slim]
 - **Dependencies Installation**: Installs all required libraries and dependencies.
-- **Port Exposure**: Exposes the application port (e.g., `EXPOSE 8080`).
+- **Port Exposure**: Exposes the application port (e.g., `EXPOSE 80`).
 - **Application Start**: Specifies the command to start the game application.
 
 ### Sample Dockerfile
 ```dockerfile
-FROM python:3.8-slim
+FROM Baseimage
 
 # Set the working directory
 WORKDIR /app
@@ -47,10 +33,10 @@ COPY . /app
 RUN pip install -r requirements.txt
 
 # Expose the application port
-EXPOSE 8080
+EXPOSE 80
 
 # Start the application
-CMD ["python", "app.py"]
+CMD ["run app.py"]
 ```
 
 ---
@@ -83,7 +69,6 @@ CMD ["python", "app.py"]
 ## 🔍 Testing
 
 - Use `curl` or a web browser to access the game application.
-- Run unit tests to ensure the application runs smoothly.
 
 ---
 
@@ -95,32 +80,10 @@ CMD ["python", "app.py"]
 
 ---
 
-## 📝 Future Enhancements
-
-- Add CI/CD pipeline integration (e.g., GitHub Actions).
-- Implement monitoring using AWS CloudWatch.
-- Enhance game features and user experience.
-
----
-
-## 🤝 Contribution
-
-Contributions are welcome! Feel free to fork this repository and submit a pull request.
-
----
-
-## 📧 Contact
-
-For queries or suggestions:
-- **Email:** [Your Email Address]
-- **GitHub:** [Your GitHub Profile URL]
-
----
-
 ## 📸 Screenshots
 
 ### Application Interface:
-
+![Screenshot 1](/Screenshot%202025-01-02%20at%2001.26.16%2019.11.53.png)
 
 ### Deployment Configuration:
-![Screenshot 2]
+![Screenshot 2](/Screenshot%202025-01-02%20at%2001.26.27%2019.11.53.png)
