@@ -2,7 +2,7 @@
 
 ## 🌟 Project Overview
 
-This project demonstrates a game application containerized using Docker and hosted on AWS Elastic Beanstalk. The application showcases a scalable and efficient deployment pipeline, leveraging modern cloud and containerization technologies.
+This project demonstrates a game application containerized using Docker and hosted on AWS Elastic Beanstalk.
 
 ---
 
@@ -21,22 +21,21 @@ The `Dockerfile` used for this application includes:
 - **Port Exposure**: Exposes the application port (e.g., `EXPOSE 80`).
 - **Application Start**: Specifies the command to start the game application.
 
-### Sample Dockerfile
+### Dockerfile
 ```dockerfile
-FROM Baseimage
+FROM ubuntu:22.04
 
-# Set the working directory
-WORKDIR /app
+RUN apt-get update
+RUN apt-get install -y nginx curl zip
 
-# Copy application code and install dependencies
-COPY . /app
-RUN pip install -r requirements.txt
+RUN echo "daemon off;" >>/etc/nginx/nginx.conf
+RUN curl -o /var/www/html/master.zip -L https://codeload.github.com/gabrielecirulli/2048/zip/master
 
-# Expose the application port
+RUN cd /var/www/html/ && unzip master.zip && mv 2048-master/* . && rm -rf 2048-master master.zip
+
 EXPOSE 80
 
-# Start the application
-CMD ["run app.py"]
+CMD [ "/usr/sbin/nginx","-c","/etc/nginx/nginx.conf"]
 ```
 
 ---
